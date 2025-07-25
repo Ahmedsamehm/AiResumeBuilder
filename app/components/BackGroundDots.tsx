@@ -2,7 +2,7 @@ import React from "react";
 
 const BackGroundDots = () => {
   return (
-    <div className="absolute inset-0 size-full -z-10">
+    <div className="absolute inset-0 size-full z-10">
       <svg aria-hidden="true" className="fill-foreground/15 pointer-events-none absolute inset-0 size-full -z-10">
         <defs>
           <pattern id="dot-pattern" width={25} height={25} patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" x={0} y={0}>

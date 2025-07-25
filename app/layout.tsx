@@ -1,6 +1,5 @@
 import "./globals.css";
 import { ThemeProvider } from "./components/themeProvider";
-import BackGroundDots from "./components/BackGroundDots";
 
 import { Toaster } from "sonner";
 import QueryProvider from "./components/QueryProvider";
@@ -13,9 +12,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
           <QueryProvider>
-            <BackGroundDots />
             <Toaster
               position="top-center"
               toastOptions={{

@@ -41,7 +41,7 @@ const Hero = () => {
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">Get noticed by recruiters and land your dream job faster.</p>
 
         {/* CTA Button */}
-        <Button size="lg" className="bg-blue-400 text-lg !p-5 shadow-lg shadow-cyan-500/50 ">
+        <Button className="bg-blue-400 text-lg !p-4 h-full shadow-lg shadow-cyan-500/50 ">
           <Link href="/dashBoard">Build Your Resume Now</Link>
         </Button>
       </div>

@@ -6,6 +6,7 @@ import useGenerateContentAi from "../../_hooks/useGenerateContentAi";
 import FormActionsProvider from "@/app/context/FormActionsContext";
 import { JobDescriptionLabel } from "./labelName/labelName";
 import Form from "@/app/components/shared/ui/Form";
+import { useResumeContext } from "@/app/context/ResumeContext";
 const prompt = `
 You are an expert in resume optimization for ATS (Applicant Tracking System).
 
@@ -34,7 +35,7 @@ Job Description:
 const JobDescription = () => {
   const [jobDescription, setJobDescription] = useState<string>("");
   const { generate, isGenerated, data: Response, isSuccess } = useGenerateContentAi();
-
+  const { handelIncrement } = useResumeContext();
   useEffect(() => {
     if (isSuccess && jobDescription !== "") {
       localStorage.setItem("jobDescription", jobDescription);
@@ -49,6 +50,7 @@ const JobDescription = () => {
       localStorage.setItem("jobDescription", jobDescription);
 
       localStorage.setItem("keyWords", Response || "");
+      handelIncrement();
     }
   }, [Response, isSuccess]);
   const createAction = (data: any) => {
@@ -63,9 +65,10 @@ const JobDescription = () => {
       generate(prompt.replace("{jobDescription}", clearText));
     }
   };
+
   return (
     <div className="flex flex-col w-full justify-center p-5">
-      <FormActionsProvider createActions={createAction} ListType={"JobDescription"} isPending={isGenerated}>
+      <FormActionsProvider createActions={createAction} ListType={"JobDescription"} isPending={isGenerated} jobDescription={jobDescription}>
         <Form labelName={JobDescriptionLabel} title={"JobDescription"} className="w-full" showList={false} showEditButton={false} />
       </FormActionsProvider>
     </div>

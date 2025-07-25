@@ -29,7 +29,7 @@ const Form = ({ labelName, title, className, showList, showEditButton }: FormPro
     setValue,
   } = useForm();
 
-  const { onSubmit, defaultValues, isEdit, setIsEdit, isPending, SelectedWork } = useFormActionsContext();
+  const { onSubmit, defaultValues, isEdit, setIsEdit, isPending, SelectedWork, jobDescription } = useFormActionsContext();
 
   useEffect(() => {
     if (defaultValues && !SelectedWork) {
@@ -37,7 +37,10 @@ const Form = ({ labelName, title, className, showList, showEditButton }: FormPro
     } else {
       reset(SelectedWork);
     }
-  }, [defaultValues, SelectedWork]);
+    if (jobDescription) {
+      reset({ jobDescription });
+    }
+  }, [defaultValues, SelectedWork, jobDescription]);
 
   return (
     <>

@@ -25,6 +25,7 @@ interface FormActionsProviderProps<T> {
   SelectedWork: any;
   setCurrentId: Dispatch<SetStateAction<string | number | null>>;
   setSelectIndex: Dispatch<SetStateAction<{ current_id: string | number; index: number }>>;
+  jobDescription?: string;
 }
 
 const FormActionsContext = createContext<FormActionsProviderProps<any> | undefined>(undefined);
@@ -43,7 +44,7 @@ export const FormActionsProvider = ({ children, createActions, updateActions, de
   const [defaultValues, setDefaultValues] = useState<any>({});
   const [currentId, setCurrentId] = useState<string | number | null>(null);
   const { resume_id } = useParams<{ resume_id: string }>();
-
+  const [jobDescription, setJobDescription] = useState<string>("");
   const { onSubmit, isEdit, setIsEdit } = useHandleSubmit({
     createActions,
     updateActions,
@@ -55,8 +56,14 @@ export const FormActionsProvider = ({ children, createActions, updateActions, de
 
   const { SelectedWork, setSelectIndex } = useSelectedFromList(fetchedAction ?? []);
 
+  const getJobDescription = localStorage.getItem("jobDescription");
+
+  useEffect(() => {
+    if (getJobDescription) setJobDescription(getJobDescription);
+  }, [getJobDescription]);
   useEffect(() => {
     if (!fetchedAction || fetchedAction.length === 0) return;
+
     setDefaultValues(fetchedAction[0]);
   }, [fetchedAction]);
 
@@ -74,6 +81,7 @@ export const FormActionsProvider = ({ children, createActions, updateActions, de
     ListType,
     SelectedWork,
     setSelectIndex,
+    jobDescription,
   };
 
   return <FormActionsContext.Provider value={value}>{children}</FormActionsContext.Provider>;

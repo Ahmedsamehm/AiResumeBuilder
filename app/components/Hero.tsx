@@ -28,14 +28,14 @@ const Hero = () => {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="text-3xl md:text-7xl font-bold mb-6 leading-tight">
           Create Your <span className="text-blue-400">Professional</span>
           <br />
           Resume in Minutes
         </h1>
 
         {/* Description */}
-        <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
           Effortlessly craft a stunning resume with the power of AI.
         </p>
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">Get noticed by recruiters and land your dream job faster.</p>

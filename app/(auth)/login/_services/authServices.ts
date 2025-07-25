@@ -23,3 +23,9 @@ export const logOutUser = async () => {
 
   return data;
 };
+
+export const signInWithGoogle = async (idToken: string) => {
+  const { data } = await axios.post<LoginResponse>("/api/auth/callback", { idToken });
+
+  return data;
+};

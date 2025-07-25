@@ -10,7 +10,7 @@ const PersonalInformation = () => {
   // here i need to make sure i send the correct type and table name to my useGenericQuery
   const { fetchedData, isDataFetched } = useGenericQuery<personalInformationType>("PersonalInformation");
   const { createData, isCreated } = useAddGenericQuery<personalInformationType>("PersonalInformation");
-  const { editData, isEdited } = useUpdateGenericQuery<personalInformationType>("PersonalInformation");
+  const { editData, isEdited } = useUpdateGenericQuery<personalInformationType>("PersonalInformation", fetchedData?.[0]?.id);
 
   if (isDataFetched || !fetchedData) return <LoadingSpinner />;
 

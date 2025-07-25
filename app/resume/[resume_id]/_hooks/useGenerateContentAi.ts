@@ -14,8 +14,6 @@ const useGenerateContentAi = () => {
   } = useMutation<string, Error, string>({
     mutationKey: ["GenerateContentAi"],
     mutationFn: (prompt: string) => {
-      console.log(prompt);
-
       return generateContentAi(prompt);
     },
     onSuccess: (data) => {

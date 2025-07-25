@@ -2,7 +2,7 @@
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter, useSearchParams } from "next/navigation";
-import { loginUser, LoginResponse, getAuthUser, logOutUser } from "../_services/authServices";
+import { loginUser, LoginResponse, getAuthUser, logOutUser, signInWithGoogle } from "../_services/authServices";
 import { User } from "../_types/User.type";
 
 import { useQuery } from "@tanstack/react-query";
@@ -13,14 +13,13 @@ export const useGetUseQuery = () => {
     data: user,
     isLoading,
     isPending,
-    refetch,
   } = useQuery({
     queryKey: ["auth-user"],
     queryFn: getAuthUser,
     refetchOnWindowFocus: false,
   });
 
-  return { user, isLoading, isPending, refetch };
+  return { user, isLoading, isPending };
 };
 
 const useLoginQuery = () => {
@@ -82,6 +81,34 @@ export const useLogout = () => {
     },
   });
   return { Logout, isLogout };
+};
+
+export const useGoogleLogin = () => {
+  const queryClient = useQueryClient();
+  const router = useRouter();
+
+  const {
+    mutate: loginWithGoogle,
+    isPending: isGoogleLogin,
+    isError: isGoogleError,
+    error: googleError,
+  } = useMutation({
+    mutationFn: (idToken: string) => {
+      return signInWithGoogle(idToken);
+    },
+    onSuccess: (data) => {
+      toast.success("Google login successfully");
+      queryClient.invalidateQueries({ queryKey: ["auth-user"] });
+
+      router.push("/");
+    },
+    onError: (error) => {
+      toast.error("Google login failed");
+      console.error("Google login failed:", error.message);
+    },
+  });
+
+  return { loginWithGoogle, isGoogleLogin, isGoogleError, googleError };
 };
 
 export { useLoginQuery };

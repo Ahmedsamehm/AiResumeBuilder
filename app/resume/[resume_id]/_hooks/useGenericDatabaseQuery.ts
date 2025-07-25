@@ -43,12 +43,12 @@ export const useAddGenericQuery = <T>(tableName: string) => {
   return { createData, isCreated };
 };
 
-export const useUpdateGenericQuery = <T>(tableName: string) => {
+export const useUpdateGenericQuery = <T>(tableName: string, current_id?: number) => {
   const queryClient = useQueryClient();
 
   const { mutate: editData, isPending: isEdited } = useMutation<T[], Error, Omit<GenericServiceParams<T>, "resume_id">>({
     mutationKey: [`update${tableName}`],
-    mutationFn: ({ formData, currentId }) => updateData<T>({ formData, currentId, tableName }),
+    mutationFn: ({ formData, currentId }) => updateData<T>({ formData, currentId: currentId || current_id, tableName }),
     onSuccess: () => {
       toast.success("Data updated successfully");
 

@@ -15,15 +15,15 @@ const WorkExperience = ({ workExperienceData }: { workExperienceData: any }) => 
           <div key={experience.id} className="mb-4">
             <div className="flex justify-between  ">
               <ul className="flex gap-1 text-black text-sm">
-                <li>{experience.jobTitle}</li>
-                <li> {experience.company}</li>
-                <li>{experience.location}</li>
+                <li className="font-medium tracking-tighter text-base ">{experience.jobTitle}</li>
+                <li className="font-medium tracking-tighter text-base"> {experience.company}</li>
+                <li className="font-medium tracking-tighter text-base">{experience.location}</li>
               </ul>
               <p className="text-black text-base font-medium tracking-tighter align-middle">
                 <span className="font-medium">{experience.duration}</span>
               </p>
             </div>
-            <p className="text-black text-base font-medium tracking-tighter align-middle mt-1">{experience.projectDetails}</p>
+            <p className="text-black text-base  align-middle mt-1">{experience.projectDetails}</p>
           </div>
         );
       })}

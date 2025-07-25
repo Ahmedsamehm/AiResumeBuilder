@@ -1,3 +1,5 @@
+"use client";
+
 import { FormActionsProvider } from "@/app/context/FormActionsContext";
 import React from "react";
 import { useAddGenericQuery, useDeleteGenericQuery, useGenericQuery, useUpdateGenericQuery } from "../../_hooks/useGenericDatabaseQuery";
@@ -12,11 +14,17 @@ const Skills = () => {
   const { createData, isCreated } = useAddGenericQuery<skillList>("Skills");
   const { editData, isEdited } = useUpdateGenericQuery<skillList>("Skills");
   const { deleteData, isDeleted } = useDeleteGenericQuery("Skills");
-
   const getKeyWord = localStorage.getItem("keyWords");
-  if (isDataFetched || !fetchedData) return <LoadingSpinner />;
-
-  const keyWords = JSON.parse(getKeyWord || "");
+  let keyWords: any;
+  if (getKeyWord) {
+    keyWords = JSON?.parse(getKeyWord || "");
+  } else {
+    keyWords = {
+      hard: [],
+      mid: [],
+      easy: [],
+    };
+  }
 
   const hardSkill = keyWords?.hard?.map((skill: string, index: number) => {
     return <Badge key={index}>{skill}</Badge>;
@@ -28,7 +36,7 @@ const Skills = () => {
   const easySkill = keyWords?.easy?.map((skill: string, index: number) => {
     return <Badge key={index}>{skill}</Badge>;
   });
-
+  if (isDataFetched || !fetchedData) return <LoadingSpinner />;
   return (
     <div className="flex flex-col w-full justify-center p-5">
       <FormActionsProvider

@@ -42,8 +42,6 @@ const useHandleSubmit = <T>(props: Props<T>) => {
     if (massage === "JobDescription") {
       createActions?.(formData as any);
     } else {
-      console.log(formData);
-
       if (isEdit) return handleUpdateSections(formData);
       return handleCreateSections(formData);
     }

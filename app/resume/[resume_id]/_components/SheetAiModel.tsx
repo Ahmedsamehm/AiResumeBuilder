@@ -1,3 +1,5 @@
+"use client";
+
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/app/components/shared/ui/sheet";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";

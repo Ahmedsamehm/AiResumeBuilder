@@ -9,7 +9,6 @@ import useHandleSubmit from "../resume/[resume_id]/_hooks/handleActions/useHandl
 import useSelectedFromList from "../resume/[resume_id]/_hooks/useSelectedFromList";
 import { GenericServiceParams } from "../resume/[resume_id]/_services/crudService";
 
-// Types
 interface FormActionsProviderProps<T> {
   children: React.ReactNode;
   onSubmit: (formData: string, massage: string) => void;
@@ -27,21 +26,7 @@ interface FormActionsProviderProps<T> {
   setCurrentId: Dispatch<SetStateAction<string | number | null>>;
   setSelectIndex: Dispatch<SetStateAction<{ current_id: string | number; index: number }>>;
 }
-// type Values = {
-//   onSubmit: (formData: string, massage: string) => void;
 
-//   resume_id: string;
-//   isEdit: boolean;
-//   setIsEdit: Dispatch<SetStateAction<boolean>>;
-//   currentId: string | number | null;
-//   setCurrentId: Dispatch<SetStateAction<string | number | null>>;
-//   isPending: boolean;
-//   SelectedWork: any;
-//   setSelectIndex: Dispatch<SetStateAction<{ current_id: number; index: number }>>;
-//   defaultValues: any;
-// };
-
-// Context Initialization
 const FormActionsContext = createContext<FormActionsProviderProps<any> | undefined>(undefined);
 
 // Custom Hook for Context
@@ -64,7 +49,6 @@ export const FormActionsProvider = ({ children, createActions, updateActions, de
     updateActions,
     resume_id,
     isPending,
-
     currentId,
     setCurrentId,
   });

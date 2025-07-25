@@ -4,7 +4,7 @@ import BackGroundDots from "./components/BackGroundDots";
 
 import { Toaster } from "sonner";
 import QueryProvider from "./components/QueryProvider";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 type RootLayoutProps = {
   children: React.ReactNode;
 };
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 },
               }}
             />
-
+            <SpeedInsights />
             <main className="pt-16">{children}</main>
           </QueryProvider>
         </ThemeProvider>

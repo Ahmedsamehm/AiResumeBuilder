@@ -1,4 +1,5 @@
 export interface personalInformationType {
+  id: number;
   fullName: string;
   position: string;
   phone: number;

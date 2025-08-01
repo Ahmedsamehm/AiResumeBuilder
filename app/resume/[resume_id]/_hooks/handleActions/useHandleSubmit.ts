@@ -13,7 +13,14 @@ type Props<T> = {
 };
 
 const useHandleSubmit = <T>(props: Props<T>) => {
-  const { createActions, updateActions, resume_id, isPending, currentId, setCurrentId } = props;
+  const {
+    createActions,
+    updateActions,
+    resume_id,
+    isPending,
+    currentId,
+    setCurrentId,
+  } = props;
 
   const [isEdit, setIsEdit] = useState(false);
 
@@ -37,10 +44,12 @@ const useHandleSubmit = <T>(props: Props<T>) => {
   };
 
   const onSubmit = (formData: string, massage: string) => {
+    console.log(massage);
+
     if (!formData && !massage) return;
 
-    if (massage === "JobDescription") {
-      createActions?.(formData as any);
+    if (massage === "jobDescription") {
+      createActions?.({ formData } as any);
     } else {
       if (isEdit) return handleUpdateSections(formData);
       return handleCreateSections(formData);

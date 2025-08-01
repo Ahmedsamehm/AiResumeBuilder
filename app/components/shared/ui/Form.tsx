@@ -37,10 +37,8 @@ const Form = ({ labelName, title, className, showList, showEditButton }: FormPro
     } else {
       reset(SelectedWork);
     }
-    if (jobDescription) {
-      reset({ jobDescription });
-    }
-  }, [defaultValues, SelectedWork, jobDescription]);
+    
+  }, [defaultValues, SelectedWork]);
 
   return (
     <>
@@ -49,6 +47,7 @@ const Form = ({ labelName, title, className, showList, showEditButton }: FormPro
       <div className={className + " z-0"}>
         <form
           onSubmit={handleSubmit((data: any) => {
+            console.log(data);
             onSubmit(data, title);
           })}
           className="w-full space-y-3"

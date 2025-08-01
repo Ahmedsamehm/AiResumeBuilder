@@ -36,39 +36,29 @@ const JobDescription = () => {
   const [jobDescription, setJobDescription] = useState<string>("");
   const { generate, isGenerated, data: Response, isSuccess } = useGenerateContentAi();
   const { handelIncrement } = useResumeContext();
-  useEffect(() => {
-    if (isSuccess && jobDescription !== "") {
-      localStorage.setItem("jobDescription", jobDescription);
-      if (typeof Response === "string") {
-        localStorage.setItem("keyWords", Response);
-      }
-    }
-  }, [Response, isSuccess, jobDescription]);
 
   useEffect(() => {
-    if (isSuccess && jobDescription !== "") {
+    if (isSuccess && jobDescription) {
       localStorage.setItem("jobDescription", jobDescription);
 
       localStorage.setItem("keyWords", Response || "");
       handelIncrement();
     }
-  }, [Response, isSuccess]);
-  const createAction = (data: any) => {
-    const jobDescription = data?.jobDescription || "";
+  }, [Response, isSuccess, jobDescription]);
+  const createAction = ({ formData }: any) => {
 
-    if (!jobDescription) return;
 
-    const clearText = jobDescription?.replace(/\s+/g, " ").trim();
+    const clearText = formData.jobDescription?.replace(/\s+/g, " ").trim();
+
+
     setJobDescription(clearText);
 
-    if (clearText !== "") {
-      generate(prompt.replace("{jobDescription}", clearText));
-    }
+    generate(prompt.replace("{jobDescription}", clearText));
   };
 
   return (
     <div className="flex flex-col w-full justify-center p-5">
-      <FormActionsProvider createActions={createAction} ListType={"JobDescription"} isPending={isGenerated} jobDescription={jobDescription}>
+      <FormActionsProvider createActions={createAction} ListType={"JobDescription"} isPending={isGenerated}>
         <Form labelName={JobDescriptionLabel} title={"JobDescription"} className="w-full" showList={false} showEditButton={false} />
       </FormActionsProvider>
     </div>

@@ -1,11 +1,12 @@
 # AI Resume Builder
 
-![AI Resume Builder] <img width="1905" height="2826" alt="AiResumeBuilder" src="https://github.com/user-attachments/assets/55931b23-e6c8-4773-a003-44712e264d50" />
+<img width="1515" height="777" alt="Screenshot 2025-08-13 172213" src="https://github.com/user-attachments/assets/401b1efd-258a-4e9f-8ff3-b3ca37356c2a" />
+
 
 
 Build ATS-friendly resumes, get AI-powered feedback, and manage all your job applications in one place.
 
-👉 **Source code:** [Demo](https://ai-resume-builder-tau-sandy.vercel.app/)
+👉 **Demo:** [Website](https://ai-resume-builder-tau-sandy.vercel.app/)
 
 ---
 

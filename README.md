@@ -18,7 +18,7 @@ The main goals:
 - Share data easily between components using **Context API**
 - Keep code **clean** and **maintainable** with **custom hooks**
 - Store and manage resumes in **Supabase**
-- Improve my **Next.js 15** and **React Query** skills
+- Improve my **Next.js 15** and **React.js 19** skills
 
 ---
 
@@ -30,7 +30,7 @@ The main goals:
 - **Supabase** – database, storage, authentication
 - **React Query + Axios** – data fetching and caching
 - **Context API** – global state management
-- **AI (ChatGPT)** – grammar checks, code reviews, keyword suggestions
+- **AI (gemini)** – grammar checks, keyword suggestions
 
 ---
 
@@ -57,15 +57,8 @@ The main goals:
   - AI grammar corrections
   - AI keyword suggestions
 
-- **Template Selector**
-  - Choose from multiple modern templates
+- **Template**
   - Download as PDF
-
-- **ATS Score Analyzer**
-  - Upload PDF resume
-  - Match against job description
-  - Get optimization tips
-
 ---
 
 ## 📂 Folder Structure

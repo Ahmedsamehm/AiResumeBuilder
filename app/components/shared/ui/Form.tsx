@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/app/components/shared/ui/button";
 import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import { useFormActionsContext } from "@/app/context/FormActionsContext";
@@ -29,7 +29,7 @@ const Form = ({ labelName, title, className, showList, showEditButton }: FormPro
     setValue,
   } = useForm();
 
-  const { onSubmit, defaultValues, isEdit, setIsEdit, isPending, SelectedWork, jobDescription } = useFormActionsContext();
+  const { onSubmit, defaultValues, isEdit, setIsEdit, isPending, SelectedWork } = useFormActionsContext();
 
   useEffect(() => {
     if (defaultValues && !SelectedWork) {
@@ -37,7 +37,6 @@ const Form = ({ labelName, title, className, showList, showEditButton }: FormPro
     } else {
       reset(SelectedWork);
     }
-    
   }, [defaultValues, SelectedWork]);
 
   return (

@@ -1,11 +1,7 @@
-// /api/resumes/[tableName]/route.ts
 import { createClient } from "@/lib/supaBase/Server";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: Promise<{ tableName: string; resume_id?: string }> }
-): Promise<NextResponse> {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ tableName: string; resume_id?: string }> }): Promise<NextResponse> {
   const supabase = await createClient();
   const resume_id = req.nextUrl.searchParams.get("resume_id");
   const { tableName } = await params;
@@ -15,23 +11,14 @@ export async function GET(
   }
 
   try {
-    const { data, error } = await supabase
-      .from(tableName)
-      .select("*")
-      .eq("resume_id", resume_id);
+    const { data, error } = await supabase.from(tableName).select("*").eq("resume_id", resume_id);
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    return NextResponse.json(
-      { message: "Error fetching data", error: String(error) },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: "Error fetching data", error: String(error) }, { status: 500 });
   }
 }
-export async function POST(
-  req: NextRequest,
-  { params }: { params: Promise<{ tableName: string }> }
-): Promise<NextResponse> {
+export async function POST(req: NextRequest, { params }: { params: Promise<{ tableName: string }> }): Promise<NextResponse> {
   const supabase = await createClient();
   const { tableName } = await params;
 
@@ -43,10 +30,7 @@ export async function POST(
   }
 
   if (!tableName) {
-    return NextResponse.json(
-      { message: "Missing table name" },
-      { status: 400 }
-    );
+    return NextResponse.json({ message: "Missing table name" }, { status: 400 });
   }
 
   const insertData = {
@@ -55,11 +39,7 @@ export async function POST(
   };
 
   try {
-    const { data, error } = await supabase
-      .from(tableName)
-      .insert([insertData])
-      .select()
-      .order("id", { ascending: true });
+    const { data, error } = await supabase.from(tableName).insert([insertData]).select().order("id", { ascending: true });
 
     if (error) {
       throw new Error(`Failed to add data to ${tableName}: ${error.message}`);
@@ -67,60 +47,39 @@ export async function POST(
 
     return NextResponse.json(data, { status: 201 });
   } catch (error) {
-    return NextResponse.json(
-      { message: `Error adding data to ${tableName}`, error: String(error) },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: `Error adding data to ${tableName}`, error: String(error) }, { status: 500 });
   }
 }
 
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: Promise<{ tableName: string }> }
-): Promise<NextResponse> {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ tableName: string }> }): Promise<NextResponse> {
   const supabase = await createClient();
   const { tableName } = await params;
 
   const body = await req.json();
   const { formData, currentId } = body;
-
-  if (!currentId) {
-    return NextResponse.json({ message: "No id provided" }, { status: 400 });
-  }
+  const { id } = formData;
 
   if (!tableName) {
-    return NextResponse.json(
-      { message: "Missing table name" },
-      { status: 400 }
-    );
+    return NextResponse.json({ message: "Missing table name" }, { status: 400 });
   }
 
   try {
     const { data, error } = await supabase
       .from(tableName)
       .update(formData)
-      .eq("id", currentId)
+      .eq("id", id || currentId)
       .select()
       .order("id", { ascending: true });
 
-    if (error)
-      throw new Error(
-        `Failed to update data in ${tableName}: ${error.message}`
-      );
+    if (error) throw new Error(`Failed to update data in ${tableName}: ${error.message}`);
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    return NextResponse.json(
-      { message: `Error updating data in ${tableName}`, error: String(error) },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: `Error updating data in ${tableName}`, error: String(error) }, { status: 500 });
   }
 }
 
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: Promise<{ tableName: string }> }
-): Promise<NextResponse> {
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ tableName: string }> }): Promise<NextResponse> {
   const supabase = await createClient();
   const { tableName } = await params;
 
@@ -132,23 +91,13 @@ export async function DELETE(
   }
 
   if (!tableName) {
-    return NextResponse.json(
-      { message: "Missing table name" },
-      { status: 400 }
-    );
+    return NextResponse.json({ message: "Missing table name" }, { status: 400 });
   }
 
   try {
-    const { data, error } = await supabase
-      .from(tableName)
-      .delete()
-      .eq("id", id)
-      .select();
+    const { data, error } = await supabase.from(tableName).delete().eq("id", id).select();
 
-    if (error)
-      throw new Error(
-        `Failed to delete data from ${tableName}: ${error.message}`
-      );
+    if (error) throw new Error(`Failed to delete data from ${tableName}: ${error.message}`);
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {

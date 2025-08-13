@@ -1,6 +1,6 @@
 # AI Resume Builder
 
-![AI Resume Builder](<img width="1905" height="2826" alt="AiResumeBuilder" src="https://github.com/user-attachments/assets/55931b23-e6c8-4773-a003-44712e264d50" />)
+![AI Resume Builder] <img width="1905" height="2826" alt="AiResumeBuilder" src="https://github.com/user-attachments/assets/55931b23-e6c8-4773-a003-44712e264d50" />
 
 
 Build ATS-friendly resumes, get AI-powered feedback, and manage all your job applications in one place.

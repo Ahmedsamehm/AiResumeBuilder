@@ -91,8 +91,9 @@ The main goals:
 - AI-based resume improvements based on job description
 - More templates for users to choose from
 
-[![Example Resume Screenshot](<img width="820" height="862" alt="ss" src="https://github.com/user-attachments/assets/06d8e0f1-ddad-42b6-8654-253ca5dbd6aa" />)
+## Example Resume Screenshot
 
+<img width="820" height="862" alt="ss" src="https://github.com/user-attachments/assets/06d8e0f1-ddad-42b6-8654-253ca5dbd6aa" />
 
 ---
 Thanks for reading!  

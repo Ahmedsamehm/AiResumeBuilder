@@ -47,6 +47,18 @@ export const PersonalLabel: FormFieldT[] = [
     placeholder: "Enter your LinkedIn profile",
   },
   {
+    name: "github",
+    label: "Github",
+    type: "text",
+    placeholder: "Enter your github profile",
+  },
+  {
+    name: "portfolio",
+    label: "portfolio",
+    type: "text",
+    placeholder: "Enter your LinkedIn profile",
+  },
+  {
     name: "summary",
     label: "Summary",
     type: "textarea",
@@ -56,20 +68,21 @@ export const PersonalLabel: FormFieldT[] = [
 
 export const WorkExperienceLabel: FormFieldT[] = [
   {
-    name: "jobTitle",
-    label: "Job Title",
+    name: "projectTitle",
+    label: "projectTitle",
     type: "text",
     placeholder: "Enter your job title",
   },
+
   {
-    name: "company",
-    label: "Company",
+    name: "technologiesUsed",
+    label: "TechnologiesUsed",
     type: "text",
-    placeholder: "Enter company name",
+    placeholder: "Enter work TechnologiesUsed React, Next.js, etc.",
   },
   {
-    name: "location",
-    label: "Location",
+    name: "github",
+    label: "Github",
     type: "text",
     placeholder: "Enter work location",
   },
@@ -112,14 +125,38 @@ export const EducationLabel: FormFieldT[] = [
     type: "text",
     placeholder: "Enter university location",
   },
+  {
+    name: "diploma",
+    label: "Diploma",
+    type: "text",
+    placeholder: "Enter Diploma name",
+  },
+  {
+    name: "diplomaLink",
+    label: "Link to Diploma",
+    type: "text",
+    placeholder: "Enter Link to Diploma (www.linkedin.com/)",
+  },
 ];
 
 export const SkillsLabel: FormFieldT[] = [
   {
-    name: "skill",
-    label: "Skill",
+    name: "programmingLanguages",
+    label: "Programming Languages",
     type: "text",
-    placeholder: "Enter your skills",
+    placeholder: "Enter your ProgrammingLanguages",
+  },
+  {
+    name: "frameworksTools",
+    label: "Frameworks & Tools",
+    type: "text",
+    placeholder: "Enter your Frameworks & Tools (e.g., React, Next.js, etc.)",
+  },
+  {
+    name: "technologies",
+    label: "Technologies",
+    type: "text",
+    placeholder: "Enter your Technologies (github, etc.)",
   },
 ];
 

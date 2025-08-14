@@ -6,16 +6,19 @@ export interface personalInformationType {
   email: string;
   address: string;
   linkedIn: string;
+  github: string;
+  portfolio: string;
   summary: string;
 }
 export type PersonalInfoArr = personalInformationType[];
 export interface workExperienceType {
   id: number;
-  jobTitle: string;
+  projectTitle: string;
   company: string;
-  location: string;
+  technologiesUsed: string;
   projectDetails: string;
   duration: string;
+  github: string;
 }
 
 export interface eductionType {
@@ -23,9 +26,13 @@ export interface eductionType {
   degree: string;
   graduationyear: string;
   location: string;
+  diploma: string;
+  diplomaLink: string;
 }
 export interface skillsType {
-  skill: string;
+  programmingLanguages: string;
+  frameworksTools: string;
+  technologies: string;
 }
 export type skillList = skillsType[];
 

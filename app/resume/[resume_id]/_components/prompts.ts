@@ -27,8 +27,11 @@ Your task:
 1. Rewrite the following work experience in professional English.
 2. Fix grammar and clarity issues.
 3. Inject keywords naturally from the job description.
-
-5. No headings, no explanations — just the improved content.
+4. Output as separate lines. No bullets, no numbers, no punctuation at the start of each line.
+5. End each line with a period.
+6. Remove all backticks or code formatting from the text.
+7. Keep each line concise, starting with a strong action verb.
+8. No headings, no explanations — just the improved lines.
 
 Work Experience:
 """

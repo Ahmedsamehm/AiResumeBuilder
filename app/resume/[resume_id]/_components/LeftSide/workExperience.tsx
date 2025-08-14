@@ -24,7 +24,7 @@ const WorkExperience = () => {
         isPending={isEdited || isDataFetched || isCreated || isDeleted}
         ListType="Experience"
       >
-        <Form labelName={WorkExperienceLabel} title="Work Experience" className="w-full" showList={true} showEditButton={true} />
+        <Form labelName={WorkExperienceLabel} title="Projects" className="w-full" showList={true} showEditButton={true} />
       </FormActionsProvider>
     </div>
   );

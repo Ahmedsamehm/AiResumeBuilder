@@ -29,15 +29,15 @@ const EditSection = () => {
             <div className="flex justify-between items-center mx-auto  space-y-3">
               {ListType === "Experience" && (
                 <div className="flex-1">
-                  <span className="font-medium">{work?.jobtitle}</span> at <span className="italic">{work?.company}</span>
-                  <div className="text-sm text-gray-600 mt-1">
-                    {work?.location} • {work?.duration}
+                  <span className="font-medium">{work?.projectTitle}</span>
+                  <div className="text-sm  text-white mt-1">
+                    {work?.location} • {work?.technologiesUsed}
                   </div>
                 </div>
               )}
               {ListType === "Skills" && (
                 <div className="flex-1">
-                  <span className="font-medium">{work?.skill}</span>
+                  <span className="font-medium">{work?.programmingLanguages}</span>
                 </div>
               )}
 

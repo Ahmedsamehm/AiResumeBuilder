@@ -33,12 +33,7 @@ const Footer = () => {
           <a href="https://github.com/Ahmedsamehm" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
             <Github className="w-5 h-5" />
           </a>
-          <a
-            href="https://www.linkedin.com/in/ahmedsamehazouz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors"
-          >
+          <a href="https://www.linkedin.com/in/ahmedsamehazouz/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
             <Linkedin className="w-5 h-5" />
           </a>
           <a href="https://x.com/3z0oo0z_" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">

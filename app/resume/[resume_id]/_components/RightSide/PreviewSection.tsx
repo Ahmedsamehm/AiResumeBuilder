@@ -13,17 +13,17 @@ const PreviewSection = () => {
   const { fetchedData: personalInfoData, isDataFetched } = useGenericQuery<personalInformationType[]>("PersonalInformation");
   const { fetchedData: workExperienceData } = useGenericQuery<workExperienceType[]>("Experience");
   const { fetchedData: educationData } = useGenericQuery<eductionType[]>("Education");
-  const { fetchedData: skillsData } = useGenericQuery<skillsType[]>("Skills");
+  const { fetchedData: skillsData } = useGenericQuery<skillsType>("Skills");
   const { contentRef } = useResumeContext();
   if (isDataFetched || !personalInfoData) return <LoadingSpinner />;
   return (
     <section ref={contentRef} className=" min-h-full  mx-auto  bg-white  rounded-sm  text-secondary capitalize  p-3 space-y-3">
       <PersonalInfo personalInfoData={personalInfoData} />
-      <hr className=" bg-gray-400 size-full " />
-      <WorkExperience workExperienceData={workExperienceData} />
-      <hr className=" bg-gray-400 size-full " />
+
       <Education educationData={educationData} />
-      <hr className=" bg-gray-400 size-full " />
+
+      <WorkExperience workExperienceData={workExperienceData} />
+
       <Skills skillsData={skillsData} />
     </section>
   );

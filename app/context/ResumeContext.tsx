@@ -22,7 +22,7 @@ export const useResumeContext = () => {
 export const ResumeContextProvider = ({ children }: { children: ReactNode }) => {
   const [steps, setSteps] = useState<number>(0);
   const contentRef = useRef(null);
-  const reactToPrintFn = useReactToPrint({ contentRef });
+  const reactToPrintFn = useReactToPrint({ contentRef   });
   const handelIncrement = () => setSteps(steps + 1);
   const handelDecrement = () => setSteps(steps - 1);
 

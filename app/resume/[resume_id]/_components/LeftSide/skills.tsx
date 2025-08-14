@@ -36,6 +36,7 @@ const Skills = () => {
   const easySkill = keyWords?.easy?.map((skill: string, index: number) => {
     return <Badge key={index}>{skill}</Badge>;
   });
+
   if (isDataFetched || !fetchedData) return <LoadingSpinner />;
   return (
     <div className="flex flex-col w-full justify-center p-5">

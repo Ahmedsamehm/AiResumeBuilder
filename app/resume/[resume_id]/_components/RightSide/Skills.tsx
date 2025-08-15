@@ -12,7 +12,7 @@ const Skills = ({ skillsData }: props) => {
   const technologies = skillsData.map((skill: skillsType) => skill.technologies);
   return (
     <section className="text-gray-800">
-      <h2 className="text-xl font-semibold border-b mb-2">Skills</h2>
+      <h2 className="text-xl font-semibold border-b mb-2 border-b border-gray-500">Skills</h2>
 
       <div className="mb-2 ">
         <p className="text-md">

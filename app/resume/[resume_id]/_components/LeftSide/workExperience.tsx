@@ -8,10 +8,10 @@ import { workExperienceType } from "../../_types/types";
 import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
 
 const WorkExperience = () => {
-  const { fetchedData, isDataFetched } = useGenericQuery<workExperienceType>("Experience");
-  const { createData, isCreated } = useAddGenericQuery<workExperienceType>("Experience");
-  const { editData, isEdited } = useUpdateGenericQuery<workExperienceType>("Experience");
-  const { deleteData, isDeleted } = useDeleteGenericQuery("Experience");
+  const { fetchedData, isDataFetched } = useGenericQuery<workExperienceType>("Projects");
+  const { createData, isCreated } = useAddGenericQuery<workExperienceType>("Projects");
+  const { editData, isEdited } = useUpdateGenericQuery<workExperienceType>("Projects");
+  const { deleteData, isDeleted } = useDeleteGenericQuery("Projects");
 
   if (isDataFetched || !fetchedData) return <LoadingSpinner />;
   return (

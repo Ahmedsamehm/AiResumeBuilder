@@ -35,7 +35,7 @@ export const useAddGenericQuery = <T>(tableName: string) => {
       queryClient.invalidateQueries({ queryKey: [tableName] });
     },
     onError: (error: Error) => {
-      toast.error("something went wrong");
+      toast.error("please click update first try again");
       console.error(`Error adding from ${tableName}:`, error);
     },
   });

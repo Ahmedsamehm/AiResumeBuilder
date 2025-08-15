@@ -46,7 +46,6 @@ const Form = ({ labelName, title, className, showList, showEditButton }: FormPro
       <div className={className + " z-0"}>
         <form
           onSubmit={handleSubmit((data: any) => {
-            console.log(data);
             onSubmit(data, title);
           })}
           className="w-full space-y-3"

@@ -19,9 +19,9 @@ const ResumeForm = () => {
       case 1:
         return <PersonalInformation />;
       case 2:
-        return <WorkExperience />;
-      case 3:
         return <Education />;
+      case 3:
+        return <WorkExperience />;
       case 4:
         return <Skills />;
       default:

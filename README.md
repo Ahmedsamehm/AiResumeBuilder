@@ -93,7 +93,8 @@ The main goals:
 
 ## Example Resume Screenshot
 
-<img width="820" height="862" alt="ss" src="https://github.com/user-attachments/assets/06d8e0f1-ddad-42b6-8654-253ca5dbd6aa" />
+<img width="609" height="789" alt="resumepng" src="https://github.com/user-attachments/assets/ff1ace4e-fe47-4b65-95ef-63ec0f1cada2" />
+
 
 ---
 Thanks for reading!  

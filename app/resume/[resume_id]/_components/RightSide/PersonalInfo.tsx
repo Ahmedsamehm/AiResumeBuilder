@@ -1,14 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const PersonalInfo = ({ personalInfoData }: { personalInfoData: any }) => {
   if (!personalInfoData) return;
 
-  const { fullName, position, email, phone, address, linkedIn, summary , github, portfolio }  = personalInfoData[0] || {};
+  const { fullName, position, email, phone, address, linkedIn, summary, github, portfolio } = personalInfoData[0] || {};
 
   console.log(github);
-  
+
   return (
     <>
       <section className="text-gray-800 space-y-4">
@@ -31,14 +31,23 @@ const PersonalInfo = ({ personalInfoData }: { personalInfoData: any }) => {
             <a href={linkedIn || "https://linkedin.com"} target="_blank" rel="noopener noreferrer" className="hover:underline">
               LinkedIn
             </a>
-            <span>|</span>
-            <a href={github || "https://github.com"} target="_blank" rel="noopener noreferrer" className="hover:underline">
-              Github
-            </a>
-            <span>|</span>
-            <a href={portfolio || ""} target="_blank" rel="noopener noreferrer" className="hover:underline">
-              portfolio
-            </a>
+
+            {github && (
+              <>
+                <span>|</span>
+                <a href={github || ""} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  Github
+                </a>
+              </>
+            )}
+            {portfolio && (
+              <>
+                <span>|</span>
+                <a href={portfolio || ""} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  Portfolio
+                </a>
+              </>
+            )}
           </div>
         </header>
 

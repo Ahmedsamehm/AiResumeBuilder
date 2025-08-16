@@ -22,23 +22,22 @@ const SheetAiModel = ({ watch, setValue }: Props) => {
   const [contentTypes, setContentTypes] = useState("");
   const [content, setContent] = useState<string>("");
 
+  const summary = watch("summary");
+  const projectDetails = watch("projectDetails");
+
   useEffect(() => {
     if (isSuccess) {
       setContent(Response || "");
+    } else {
+      setContent(summary || projectDetails);
     }
-  }, [Response, isSuccess]);
-
-  const summary = watch("summary");
-  const projectDetails = watch("projectDetails");
-  const skills = watch("skills");
+  }, [Response, isSuccess, summary, projectDetails]);
 
   useEffect(() => {
     if (steps === 1) {
       setContentTypes("summary");
-    } else if (steps === 2) {
+    } else if (steps === 3) {
       setContentTypes("projectDetails");
-    } else if (steps === 4) {
-      setContentTypes("skills");
     }
   }, [steps]);
 
@@ -49,8 +48,7 @@ const SheetAiModel = ({ watch, setValue }: Props) => {
         return "Generate an Optimized Summary";
       case projectDetails:
         return "Improve Your Work Experience";
-      case skills:
-        return "Enhance Your Skills";
+
       default:
         return "AI Content Improvement";
     }
@@ -63,8 +61,6 @@ const SheetAiModel = ({ watch, setValue }: Props) => {
         return "We will use AI to create a professional summary tailored to the job description you provided. This helps highlight your relevant skills and improve your chances with recruiters and applicant tracking systems (ATS).";
       case "projectDetails":
         return "We will use AI to enhance your work experience details to better match the job requirements and improve your resume's effectiveness.";
-      case "skills":
-        return "We will use AI to optimize your skills section to better align with the job description and highlight your most relevant abilities.";
       default:
         return "We will use AI to improve your content based on the job description you provide.";
     }

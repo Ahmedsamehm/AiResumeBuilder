@@ -2,14 +2,16 @@ export interface personalInformationType {
   id: number;
   fullName: string;
   position: string;
-  phone: number;
+  phone: string;
   email: string;
   address: string;
   linkedIn: string;
   github: string;
   portfolio: string;
   summary: string;
+  required: boolean;
 }
+
 export type PersonalInfoArr = personalInformationType[];
 export interface workExperienceType {
   id: number;

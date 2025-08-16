@@ -36,7 +36,7 @@ const SheetAiModel = ({ watch, setValue }: Props) => {
   useEffect(() => {
     if (steps === 1) {
       setContentTypes("summary");
-    } else if (steps === 3) {
+    } else if (steps === 4) {
       setContentTypes("projectDetails");
     }
   }, [steps]);

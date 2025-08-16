@@ -10,7 +10,7 @@ export interface GenericServiceParams<T> {
 export const fetchData = async <T>(resume_id: string, tableName: string): Promise<T[]> => {
   const { data } = await axios.get<T[]>(`/api/resumes/${tableName}?resume_id=${resume_id}`);
   if (!data) throw new Error(`No data found for table ${tableName}.`);
-  return data;  
+  return data;
 };
 
 export const addData = async <T>({ formData, tableName, resume_id }: Omit<GenericServiceParams<T>, "currentId">): Promise<T[]> => {

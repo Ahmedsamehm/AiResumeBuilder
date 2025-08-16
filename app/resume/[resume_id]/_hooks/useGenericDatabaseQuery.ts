@@ -9,6 +9,7 @@ export const useGenericQuery = <T>(tableName: string) => {
   const { resume_id } = useParams<{ resume_id: string }>();
   if (!resume_id) throw new Error("No resume ID provided.");
 
+
   const {
     data: fetchedData,
     isPending: isDataFetched,

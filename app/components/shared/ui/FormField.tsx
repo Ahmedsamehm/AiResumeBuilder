@@ -5,7 +5,7 @@ import SheetAiModel from "@/app/resume/[resume_id]/_components/SheetAiModel";
 import { Label } from "./Label";
 
 function FormField(props: any) {
-  const { type, placeholder, label, name, register, errors, index, watch, setValue, required } = props;
+  const { type, placeholder, label, name, register, errors, index, watch, setValue, required, enableAi } = props;
 
   return (
     <li key={index} className="space-y-2 capitalize list-none relative group z-[9000]">
@@ -13,7 +13,7 @@ function FormField(props: any) {
 
       {type === "textarea" ? (
         <div>
-          <SheetAiModel watch={watch} setValue={setValue} />
+          {enableAi && <SheetAiModel watch={watch} setValue={setValue} />}
           <Textarea id={name} placeholder={placeholder} {...register(name, { required: { value: required, message: `${label} is required` } })} className="relative" />
         </div>
       ) : (

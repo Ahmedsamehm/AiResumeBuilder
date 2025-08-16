@@ -13,15 +13,6 @@ export interface personalInformationType {
 }
 
 export type PersonalInfoArr = personalInformationType[];
-export interface workExperienceType {
-  id: number;
-  projectTitle: string;
-  company: string;
-  technologiesUsed: string;
-  projectDetails: string;
-  duration: string;
-  github: string;
-}
 
 export interface eductionType {
   university: string;
@@ -31,14 +22,32 @@ export interface eductionType {
   diploma: string;
   diplomaLink: string;
 }
+
+export type ExperienceType = {
+  id: number;
+  title: string | null;
+  company: string | null;
+  location: string | null;
+  start_date: string | null;
+  end_date: string | null;
+  description: string | null;
+};
+export interface ProjectsType {
+  id: number;
+  projectTitle: string;
+  company: string;
+  technologiesUsed: string;
+  projectDetails: string;
+  duration: string;
+  github: string;
+}
+
 export interface skillsType {
   programmingLanguages: string;
   frameworksTools: string;
   technologies: string;
 }
 export type skillList = skillsType[];
-
-export type workExperienceList = workExperienceType[];
 
 export type JobDescriptionType = {
   name: "jobDescription";

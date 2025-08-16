@@ -1,13 +1,13 @@
 // app/resume/[resume_id]/_components/LeftSide/labelName/labelName.tsx
-import { personalInformationType, workExperienceType, eductionType, skillsType, JobDescriptionType } from "@/app/resume/[resume_id]/_types/types";
 
 export type FormFieldT = {
-  name: keyof personalInformationType | keyof workExperienceType | keyof eductionType | keyof skillsType | keyof JobDescriptionType;
+  name: string;
   label: string;
   type: "text" | "textarea" | "tel" | "email" | "select";
   placeholder: string;
   options?: string[];
   required?: boolean;
+  enableAi?: boolean;
 };
 
 export const PersonalLabel: FormFieldT[] = [
@@ -73,10 +73,11 @@ export const PersonalLabel: FormFieldT[] = [
     type: "textarea",
     placeholder: "Write your professional summary",
     required: true,
+    enableAi: true,
   },
 ];
 
-export const WorkExperienceLabel: FormFieldT[] = [
+export const ProjectsLabel: FormFieldT[] = [
   {
     name: "projectTitle",
     label: "projectTitle",
@@ -90,7 +91,7 @@ export const WorkExperienceLabel: FormFieldT[] = [
     label: "TechnologiesUsed",
     type: "text",
     placeholder: "Enter work TechnologiesUsed React, Next.js, etc.",
-    required: true,
+    required: false,
   },
   {
     name: "github",
@@ -105,6 +106,7 @@ export const WorkExperienceLabel: FormFieldT[] = [
     type: "textarea",
     placeholder: "Describe your projects",
     required: true,
+    enableAi: true,
   },
   {
     name: "duration",
@@ -160,6 +162,51 @@ export const EducationLabel: FormFieldT[] = [
   },
 ];
 
+export const ExperienceLabel: FormFieldT[] = [
+  {
+    name: "company",
+    label: "Company / Organization",
+    type: "text",
+    placeholder: "Enter company or program name (e.g., DEPI - AI & Data Science Track)",
+    required: true,
+  },
+  {
+    name: "title",
+    label: "Job Title",
+    type: "text",
+    placeholder: "Enter your role (e.g., ML Engineer Intern)",
+    required: true,
+  },
+  {
+    name: "location",
+    label: "Location",
+    type: "text",
+    placeholder: "Enter location (e.g., Cairo, Egypt)",
+    required: true,
+  },
+  {
+    name: "start_date",
+    label: "Start Date",
+    type: "text",
+    placeholder: "Select start date",
+    required: true,
+  },
+  {
+    name: "end_date",
+    label: "End Date",
+    type: "text",
+    placeholder: "Select end date (or leave empty if current)",
+    required: true,
+  },
+  {
+    name: "description",
+    label: "Description",
+    type: "textarea",
+    placeholder: `Enter key responsibilities and achievements. Use bullet points:\n• Participated in an intensive training program...\n• Applied machine learning algorithms...`,
+    required: true,
+    enableAi: false,
+  },
+];
 export const SkillsLabel: FormFieldT[] = [
   {
     name: "programmingLanguages",
@@ -191,5 +238,6 @@ export const JobDescriptionLabel: any = [
     type: "textarea",
     placeholder: "Write your job description",
     required: true,
+    enableAi: false,
   },
 ];

@@ -11,19 +11,19 @@ const Skills = ({ skillsData }: props) => {
   const frameworksTools = skillsData.map((skill: skillsType) => skill.frameworksTools);
   const technologies = skillsData.map((skill: skillsType) => skill.technologies);
   return (
-    <section className="text-gray-800">
-      <h2 className="text-xl font-semibold border-b mb-2 border-b border-gray-500">Skills</h2>
+    <section className="text-gray-800 print:break-inside-avoid">
+      <h2 className="text-xl font-semibold border-b mb-2 border-gray-500">Skills</h2>
 
-      <div className="mb-2 ">
+      <div className="mb-2">
         <p className="text-md">
-          {<span className="font-semibold">programmingLanguages:</span>} {programmingLanguages}
+          <span className="font-semibold">programmingLanguages:</span> {programmingLanguages}
         </p>
 
         <p className="text-md">
-          {<span className="font-semibold">frameworksTools:</span>} {frameworksTools}
+          <span className="font-semibold">frameworksTools:</span> {frameworksTools}
         </p>
         <p className="text-md">
-          {<span className="font-semibold">technologies:</span>} {technologies}
+          <span className="font-semibold">technologies:</span> {technologies}
         </p>
       </div>
     </section>

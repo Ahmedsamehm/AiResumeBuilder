@@ -5,7 +5,7 @@ const Education = ({ educationData }: any) => {
 
   if (educationData.length === 0) return <p className="text-gray-500 text-sm italic">No education added yet.</p>;
   return (
-    <section className="text-gray-800 space-y-4">
+    <section className="text-gray-800 space-y-4 print:break-inside-avoid">
       {/* Section Header */}
       <h2 className="text-lg font-semibold uppercase border-b border-gray-500 pb-0.5 mb-2 text-gray-900 tracking-wider">Education</h2>
 
@@ -21,12 +21,18 @@ const Education = ({ educationData }: any) => {
         </div>
 
         {/* diploma */}
-        <p className="text-sm mt-1">
-          <span className="font-medium ">Diploma</span>: {educationData[0].diploma || "diploma name like this Diploma in Front-End Development (react/next.js) - componyName"}
-          <a className="ml-1" target="_blank" href={educationData[0].diplomaLink || "#"}>
-            (<span className="underline hover:text-blue-600">Link</span>)
-          </a>
-        </p>
+        {educationData[0].diploma && (
+          <p className="text-sm mt-1">
+            <p className="text-sm mt-1">
+              <span className="font-medium  ">Diploma</span>:{educationData[0].diploma}
+              {educationData[0].diplomaLink && (
+                <a href={educationData[0].diplomaLink} className="underline hover:text-blue-600 ml-2">
+                  Link
+                </a>
+              )}
+            </p>
+          </p>
+        )}
         {/* Transcript Link */}
         {/* <p className="text-sm mt-1">
           <a href={educationData[0].transcriptLink || "#"} className="underline hover:text-blue-600">

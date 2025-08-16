@@ -6,8 +6,10 @@ import { useResumeContext } from "@/app/context/ResumeContext";
 import PersonalInformation from "./personalInformation";
 import Skills from "./skills";
 import Education from "./education";
-import WorkExperience from "./workExperience";
+
 import JobDescription from "./JobDescription";
+import Experience from "./Experience";
+import Projects from "./Projects";
 
 const ResumeForm = () => {
   const { steps } = useResumeContext();
@@ -21,8 +23,10 @@ const ResumeForm = () => {
       case 2:
         return <Education />;
       case 3:
-        return <WorkExperience />;
+        return <Experience />;
       case 4:
+        return <Projects />;
+      case 5:
         return <Skills />;
       default:
         return null;

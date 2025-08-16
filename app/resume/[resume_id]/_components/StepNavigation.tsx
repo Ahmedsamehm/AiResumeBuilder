@@ -20,10 +20,10 @@ function StepNavigation({ isEdit = false, setIsEdit = null, showEditButton = fal
           <Button onClick={handelDecrement} disabled={steps === 0}>
             Previous
           </Button>
-          <Button onClick={handelIncrement} disabled={steps === 4}>
+          <Button onClick={handelIncrement} disabled={steps === 5}>
             Next
           </Button>
-          {steps === 4 ? (
+          {steps === 5 ? (
             <Button type="button" onClick={reactToPrintFn}>
               Download
             </Button>

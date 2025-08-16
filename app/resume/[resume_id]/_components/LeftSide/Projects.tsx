@@ -1,16 +1,17 @@
 import { FormActionsProvider } from "@/app/context/FormActionsContext";
 import React from "react";
 
-import { WorkExperienceLabel } from "./labelName/labelName";
 import { useAddGenericQuery, useDeleteGenericQuery, useGenericQuery, useUpdateGenericQuery } from "../../_hooks/useGenericDatabaseQuery";
 import Form from "@/app/components/shared/ui/Form";
-import { workExperienceType } from "../../_types/types";
-import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
 
-const WorkExperience = () => {
-  const { fetchedData, isDataFetched } = useGenericQuery<workExperienceType>("Projects");
-  const { createData, isCreated } = useAddGenericQuery<workExperienceType>("Projects");
-  const { editData, isEdited } = useUpdateGenericQuery<workExperienceType>("Projects");
+import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
+import { ProjectsType } from "../../_types/types";
+import { ProjectsLabel } from "./labelName/labelName";
+
+const Projects = () => {
+  const { fetchedData, isDataFetched } = useGenericQuery<ProjectsType>("Projects");
+  const { createData, isCreated } = useAddGenericQuery<ProjectsType>("Projects");
+  const { editData, isEdited } = useUpdateGenericQuery<ProjectsType>("Projects");
   const { deleteData, isDeleted } = useDeleteGenericQuery("Projects");
 
   if (isDataFetched || !fetchedData) return <LoadingSpinner />;
@@ -22,12 +23,12 @@ const WorkExperience = () => {
         updateActions={editData}
         deleteActions={deleteData}
         isPending={isEdited || isDataFetched || isCreated || isDeleted}
-        ListType="Experience"
+        ListType="Projects"
       >
-        <Form labelName={WorkExperienceLabel} title="Projects" className="w-full" showList={true} showEditButton={true} />
+        <Form labelName={ProjectsLabel} title="Projects" className="w-full" showList={true} showEditButton={true} />
       </FormActionsProvider>
     </div>
   );
 };
 
-export default WorkExperience;
+export default Projects;

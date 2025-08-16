@@ -1,17 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const PersonalInfo = ({ personalInfoData }: { personalInfoData: any }) => {
   if (!personalInfoData) return;
 
   const { fullName, position, email, phone, address, linkedIn, summary, github, portfolio } = personalInfoData[0] || {};
 
-  console.log(github);
-
   return (
     <>
-      <section className="text-gray-800 space-y-4">
+      <section className="text-gray-800 space-y-4 print:break-inside-avoid ">
         {/* Header */}
         <header className="text-center">
           {/* Name */}
@@ -22,6 +20,8 @@ const PersonalInfo = ({ personalInfoData }: { personalInfoData: any }) => {
             <span>{address || "Cairo, Egypt"}</span>
             <span className="hidden sm:inline-block">|</span>
             <span>(+20) {phone || "12546"}</span>
+            <span className="hidden sm:inline-block">|</span>
+            <span>{position || "Software Engineer"}</span>
             <span className="hidden sm:inline-block">|</span>
             <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer" className="hover:underline">
               {email || "support@gmail.com"}
@@ -56,7 +56,7 @@ const PersonalInfo = ({ personalInfoData }: { personalInfoData: any }) => {
         {/* Summary */}
         <div>
           <h2 className="text-base font-semibold uppercase border-b border-gray-500 pb-0.5 mb-2 text-gray-900 tracking-wider">Summary</h2>
-          <p className="text-gray-800 leading-relaxed text-sm">{summary || "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam."}</p>
+          <p className="text-gray-800 leading-relaxed text-sm capitalize">{summary || "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam."}</p>
         </div>
       </section>
     </>

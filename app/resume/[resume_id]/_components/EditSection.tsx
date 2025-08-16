@@ -27,7 +27,7 @@ const EditSection = () => {
         {fetchedAction.map((work: any, index: number) => (
           <li key={work?.id} className={`border-b py-3 border-2  p-5 + ${SelectedWork?.index === index ? "border-gray-200 transform scale-95 transition-all" : ""} `}>
             <div className="flex justify-between items-center mx-auto  space-y-3">
-              {ListType === "Experience" && (
+              {ListType === "Projects" && (
                 <div className="flex-1">
                   <span className="font-medium">{work?.projectTitle}</span>
                   <div className="text-sm  text-white mt-1">
@@ -38,6 +38,11 @@ const EditSection = () => {
               {ListType === "Skills" && (
                 <div className="flex-1">
                   <span className="font-medium">{work?.programmingLanguages}</span>
+                </div>
+              )}
+              {ListType === "Experience" && (
+                <div className="flex-1">
+                  <span className="font-medium">{work?.company}</span>
                 </div>
               )}
 

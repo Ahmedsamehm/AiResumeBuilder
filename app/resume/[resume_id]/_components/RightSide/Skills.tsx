@@ -14,7 +14,7 @@ const Skills = ({ skillsData }: props) => {
     <section className="text-gray-800 print:break-inside-avoid">
       <h2 className="text-xl font-semibold border-b mb-2 border-gray-500">Skills</h2>
 
-      <div className="mb-2">
+      <div className="mb-2 capitalize">
         <p className="text-md">
           <span className="font-semibold">programmingLanguages:</span> {programmingLanguages}
         </p>

@@ -18,7 +18,7 @@ const PersonalInformation = () => {
   return (
     <div className="flex flex-col w-full justify-center p-5">
       <FormActionsProvider fetchedAction={fetchedData} createActions={createData} updateActions={editData} isPending={isEdited || isDataFetched || isCreated}>
-        <Form labelName={PersonalLabel} title="Personal Information" className="w-full" showEditButton={true} />
+        <Form labelName={PersonalLabel} title="Personal Information" className="w-full " showEditButton={true} />
       </FormActionsProvider>
     </div>
   );

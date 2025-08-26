@@ -19,7 +19,7 @@ const Experience = ({ experienceData }: { experienceData: any }) => {
                 <p className="text-sm font-medium text-gray-700">
                   {experience.start_date} – {experience.end_date}
                 </p>
-                <p className="text-xs text-gray-500">{experience.location}</p>
+                <p className="text-xs text-gray-500"> {experience.location}</p>
               </div>
             </div>
 

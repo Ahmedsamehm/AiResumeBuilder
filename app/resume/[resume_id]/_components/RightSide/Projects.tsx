@@ -23,7 +23,7 @@ const Projects = ({ ProjectsData }: { ProjectsData: any }) => {
                     Github
                   </a>
                 )}
-                {Project.technologiesUsed && <span> |({Project.technologiesUsed})</span>}
+                {Project.technologiesUsed && <span> | ({Project.technologiesUsed})</span>}
               </p>
             </div>
             <span className="text-sm text-gray-700 whitespace-nowrap">{Project.duration}</span>

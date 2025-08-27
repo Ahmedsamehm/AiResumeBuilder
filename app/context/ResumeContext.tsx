@@ -2,6 +2,7 @@
 
 import { createContext, ReactNode, useContext, useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
+
 type ResumeContextType = {
   steps: number;
   setSteps: React.Dispatch<React.SetStateAction<number>>;
@@ -22,7 +23,7 @@ export const useResumeContext = () => {
 export const ResumeContextProvider = ({ children }: { children: ReactNode }) => {
   const [steps, setSteps] = useState<number>(0);
   const contentRef = useRef(null);
-  const reactToPrintFn = useReactToPrint({ contentRef   });
+  const reactToPrintFn = useReactToPrint({ contentRef });
   const handelIncrement = () => setSteps(steps + 1);
   const handelDecrement = () => setSteps(steps - 1);
 
@@ -37,3 +38,4 @@ export const ResumeContextProvider = ({ children }: { children: ReactNode }) => 
 
   return <ResumeContext.Provider value={value}>{children}</ResumeContext.Provider>;
 };
+

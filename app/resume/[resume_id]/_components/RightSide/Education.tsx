@@ -23,14 +23,17 @@ const Education = ({ educationData }: any) => {
         {/* diploma */}
         {educationData[0].diploma && (
           <p className="text-sm mt-1">
-            <p className="text-sm mt-1">
-              <span className="font-medium  ">Diploma</span>:{educationData[0].diploma}
-              {educationData[0].diplomaLink && (
-                <a href={educationData[0].diplomaLink} className="underline hover:text-blue-600 ml-2">
-                  Link
-                </a>
-              )}
-            </p>
+            <div className="flex items-center justify-between">
+              <p className="text-sm mt-1 text-wrap w-xl capitalize ">
+                <span className="font-medium ">Diploma</span>: {educationData[0].diploma}
+                {educationData[0].diplomaLink && (
+                  <a href={educationData[0].diplomaLink} className="underline hover:text-blue-600 ml-2">
+                    Link
+                  </a>
+                )}
+              </p>
+              <span>{educationData[0]?.diplomadate}</span>
+            </div>
           </p>
         )}
         {/* Transcript Link */}

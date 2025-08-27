@@ -160,6 +160,13 @@ export const EducationLabel: FormFieldT[] = [
     placeholder: "Enter Link to Diploma (www.linkedin.com/)",
     required: false,
   },
+  {
+    name: "diplomadate",
+    label: "diploma Date",
+    type: "text",
+    placeholder: "Enter diploma date (start-end)",
+    required: false,
+  },
 ];
 
 export const ExperienceLabel: FormFieldT[] = [

@@ -26,14 +26,14 @@ const Skills = () => {
     };
   }
 
-  const hardSkill = keyWords?.hard?.map((skill: string, index: number) => {
+  const programmingLanguages = keyWords?.programmingLanguages?.map((skill: string, index: number) => {
     return <Badge key={index}>{skill}</Badge>;
   });
 
-  const midSkill = keyWords?.mid?.map((skill: string, index: number) => {
+  const frameworks = keyWords?.frameworks?.map((skill: string, index: number) => {
     return <Badge key={index}>{skill}</Badge>;
   });
-  const easySkill = keyWords?.easy?.map((skill: string, index: number) => {
+  const technologies = keyWords?.technologies?.map((skill: string, index: number) => {
     return <Badge key={index}>{skill}</Badge>;
   });
 
@@ -52,16 +52,16 @@ const Skills = () => {
       </FormActionsProvider>
       <div className="flex flex-col gap-4 mt-5 max-h-[40vh] overflow-auto">
         <ul className="flex flex-row flex-wrap justify-center gap-2">
-          <Badge variant="outline">Hard Skills</Badge>
-          {hardSkill}
+          <Badge variant="outline">programming Languages</Badge>
+          {programmingLanguages}
         </ul>
         <ul className="flex flex-row flex-wrap justify-center gap-2">
-          <Badge variant="outline">Medium Skills</Badge>
-          {midSkill}
+          <Badge variant="outline">Frameworks</Badge>
+          {frameworks}
         </ul>
         <ul className="flex flex-row flex-wrap justify-center gap-2">
-          <Badge variant="outline">Easy Skills</Badge>
-          {easySkill}
+          <Badge variant="outline">Technologies</Badge>
+          {technologies}
         </ul>
       </div>
     </div>

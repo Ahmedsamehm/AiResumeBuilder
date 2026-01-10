@@ -1,11 +1,11 @@
 "use client";
 
 import { FormActionsProvider } from "@/app/context/FormActionsContext";
-import React from "react";
+
 import { useAddGenericQuery, useDeleteGenericQuery, useGenericQuery, useUpdateGenericQuery } from "../../_hooks/useGenericDatabaseQuery";
-import { SkillsLabel } from "../labelName";
+import { SkillsLabel } from "./Skills.config";
 import Form from "@/app/components/shared/ui/Form";
-import { skillList } from "../../_types/types";
+
 import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
 import { Badge } from "@/app/components/shared/ui/badge";
 

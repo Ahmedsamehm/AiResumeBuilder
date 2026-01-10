@@ -2,8 +2,9 @@ import { FormActionsProvider } from "@/app/context/FormActionsContext";
 import Form from "@/app/components/shared/ui/Form";
 import { useAddGenericQuery, useGenericQuery, useUpdateGenericQuery } from "../../_hooks/useGenericDatabaseQuery";
 import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
-import { eductionType } from "../../_types/types";
-import { EducationLabel } from "../labelName";
+
+import { EducationLabel } from "./Education.config";
+import { eductionType } from "@/app/types/resumeInput.type";
 
 const EducationForm = () => {
   const { fetchedData, isDataFetched } = useGenericQuery<eductionType>("Education");

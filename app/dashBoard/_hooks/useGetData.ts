@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import fetchResumes from "../_services/fetchResumes";
-import { Resume } from "../_types/types";
+import { Resume } from "@/app/types/dashboard.type";
 
 const useResumes = () => {
   const {

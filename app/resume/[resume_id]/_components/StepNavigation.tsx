@@ -2,7 +2,6 @@
 
 import { Button } from "@/app/components/shared/ui/button";
 import { useResumeContext } from "@/app/context/ResumeContext";
-import React from "react";
 
 type Props = {
   isEdit: boolean;
@@ -14,7 +13,9 @@ function StepNavigation({ isEdit = false, setIsEdit = null, showEditButton = fal
 
   return (
     <ul className="flex justify-between">
-      {showEditButton && <li>{isEdit ? <Button onClick={() => setIsEdit(false)}>Cancel</Button> : <Button onClick={() => setIsEdit(true)}>Edit</Button>}</li>}
+      {showEditButton && (
+        <li>{isEdit ? <Button onClick={() => setIsEdit(false)}>Cancel</Button> : <Button onClick={() => setIsEdit(true)}>Edit</Button>}</li>
+      )}
       <li className="ml-auto ">
         <div className="space-x-3 ">
           <Button onClick={handelDecrement} disabled={steps === 0}>

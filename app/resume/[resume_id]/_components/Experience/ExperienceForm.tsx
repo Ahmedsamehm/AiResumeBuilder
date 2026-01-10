@@ -2,9 +2,9 @@ import FormActionsProvider from "@/app/context/FormActionsContext";
 import React from "react";
 
 import { useAddGenericQuery, useDeleteGenericQuery, useGenericQuery, useUpdateGenericQuery } from "../../_hooks/useGenericDatabaseQuery";
-import { ExperienceType } from "../../_types/types";
-import { ExperienceLabel } from "../labelName";
+import { ExperienceLabel } from "./Experience.config";
 import Form from "@/app/components/shared/ui/Form";
+import { ExperienceType } from "@/app/types/resumeInput.type";
 
 function ExperienceForm() {
   const { fetchedData, isDataFetched } = useGenericQuery<ExperienceType>("Experience");

@@ -5,8 +5,9 @@ import { useAddGenericQuery, useDeleteGenericQuery, useGenericQuery, useUpdateGe
 import Form from "@/app/components/shared/ui/Form";
 
 import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
-import { ProjectsType } from "../../_types/types";
-import { ProjectsLabel } from "../labelName";
+
+import { ProjectsLabel } from "./Projects.config";
+import { ProjectsType } from "@/app/types/resumeInput.type";
 
 const ProjectsForm = () => {
   const { fetchedData, isDataFetched } = useGenericQuery<ProjectsType>("Projects");

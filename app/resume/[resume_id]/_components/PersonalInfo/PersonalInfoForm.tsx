@@ -1,11 +1,11 @@
 import Form from "@/app/components/shared/ui/Form";
-import React from "react";
+
 
 import { FormActionsProvider } from "@/app/context/FormActionsContext";
 import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
 import { useAddGenericQuery, useGenericQuery, useUpdateGenericQuery } from "../../_hooks/useGenericDatabaseQuery";
-import { personalInformationType } from "../../_types/types";
-import { PersonalLabel } from "../labelName";
+import { personalInformationType } from "@/app/types/resumeInput.type";
+import { PersonalLabel } from "./PersonalInfo.config";
 
 const PersonalInfoForm = () => {
   // here i need to make sure i send the correct type and table name to my useGenericQuery

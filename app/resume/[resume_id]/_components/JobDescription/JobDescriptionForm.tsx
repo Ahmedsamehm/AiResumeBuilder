@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import useGenerateContentAi from "../../_hooks/useGenerateContentAi";
 import FormActionsProvider from "@/app/context/FormActionsContext";
-import { JobDescriptionLabel } from "../labelName";
+import { JobDescriptionLabel } from "./JobDescription.config";
 import Form from "@/app/components/shared/ui/Form";
 import { useResumeContext } from "@/app/context/ResumeContext";
 

@@ -4,8 +4,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { useRouter } from "next/navigation";
 import createResume from "../_services/createResume";
-import { Title } from "../_types/types";
+
 import { toast } from "sonner";
+import { Title } from "@/app/types/dashboard.type";
 
 export type TData = {
   title: string;

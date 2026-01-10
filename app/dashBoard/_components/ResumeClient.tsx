@@ -2,7 +2,7 @@
 
 import { Button } from "@/app/components/shared/ui/button";
 import Link from "next/link";
-import React from "react";
+
 
 import Search from "./Search";
 

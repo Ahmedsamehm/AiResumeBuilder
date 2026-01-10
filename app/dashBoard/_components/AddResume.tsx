@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -15,7 +14,7 @@ import {
 import { Input } from "@/app/components/shared/ui/input";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useCreateResume from "../_hooks/useCreateResume";
-import { Title } from "../_types/types";
+import { Title } from "@/app/types/dashboard.type";
 
 const AddResume = () => {
   const { AddResume, isPending: AddResumeLoading } = useCreateResume();

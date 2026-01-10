@@ -1,6 +1,5 @@
-import { Title } from "../_types/types";
+import { Title } from "@/app/types/dashboard.type";
 import { TData } from "../_hooks/useCreateResume";
-import { T } from "./deleteResume";
 import axios from "axios";
 
 const createResume = async ({ title }: Title): Promise<TData[]> => {

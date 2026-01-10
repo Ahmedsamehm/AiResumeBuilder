@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useFormActionsContext } from "@/app/context/FormActionsContext";
 import { Button } from "@/app/components/shared/ui/button";
 
@@ -25,7 +23,10 @@ const EditSection = () => {
     <div className="max-h-[30vh] overflow-auto my-5 ">
       <ul>
         {fetchedAction.map((work: any, index: number) => (
-          <li key={work?.id} className={`border-b py-3 border-2  p-5 + ${SelectedWork?.index === index ? "border-gray-200 transform scale-95 transition-all" : ""} `}>
+          <li
+            key={work?.id}
+            className={`border-b py-3 border-2  p-5 + ${SelectedWork?.index === index ? "border-gray-200 transform scale-95 transition-all" : ""} `}
+          >
             <div className="flex justify-between items-center mx-auto  space-y-3">
               {ListType === "Projects" && (
                 <div className="flex-1">

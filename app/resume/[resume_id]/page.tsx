@@ -1,6 +1,6 @@
 import React from "react";
-import ResumeForm from "./_components/LeftSide/resumeForm";
-import PreviewSection from "./_components/RightSide/PreviewSection";
+import ResumeForm from "./_components/resumeForm";
+import PreviewSection from "./_components/PreviewSection";
 import { Button } from "@/app/components/shared/ui/button";
 
 import Link from "next/link";

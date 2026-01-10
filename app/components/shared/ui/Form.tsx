@@ -8,7 +8,7 @@ import { useFormActionsContext } from "@/app/context/FormActionsContext";
 
 import StepNavigation from "@/app/resume/[resume_id]/_components/StepNavigation";
 import EditSection from "@/app/resume/[resume_id]/_components/EditSection";
-import { FormFieldT } from "@/app/resume/[resume_id]/_components/LeftSide/labelName/labelName";
+import { FormFieldT } from "@/app/resume/[resume_id]/_components/labelName";
 import FormField from "./FormField";
 
 type FormProps = {

@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 
 import useGenerateContentAi from "../../_hooks/useGenerateContentAi";
 import FormActionsProvider from "@/app/context/FormActionsContext";
-import { JobDescriptionLabel } from "./labelName/labelName";
+import { JobDescriptionLabel } from "../labelName";
 import Form from "@/app/components/shared/ui/Form";
 import { useResumeContext } from "@/app/context/ResumeContext";
+
 const prompt = `
 You are an expert in resume optimization for ATS (Applicant Tracking System).
 
@@ -33,7 +34,7 @@ Job Description:
 """
 `;
 
-const JobDescription = () => {
+const JobDescriptionForm = () => {
   const [jobDescription, setJobDescription] = useState<string>("");
   const { generate, isGenerated, data: Response, isSuccess } = useGenerateContentAi();
   const { handelIncrement } = useResumeContext();
@@ -63,4 +64,4 @@ const JobDescription = () => {
   );
 };
 
-export default JobDescription;
+export default JobDescriptionForm;

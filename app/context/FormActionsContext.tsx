@@ -5,9 +5,9 @@ import { createContext, Dispatch, SetStateAction, useContext, useEffect, useStat
 import { useParams } from "next/navigation";
 
 // Internal Hooks
-import useHandleSubmit from "../resume/[resume_id]/_hooks/handleActions/useHandleSubmit";
-import useSelectedFromList from "../resume/[resume_id]/_hooks/useSelectedFromList";
-import { GenericServiceParams } from "../resume/[resume_id]/_services/crudService";
+import useHandleSubmit from "../(protected)/resume/[resume_id]/_hooks/handleActions/useHandleSubmit";
+import useSelectedFromList from "../(protected)/resume/[resume_id]/_hooks/useSelectedFromList";
+import { GenericServiceParams } from "../(protected)/resume/[resume_id]/_services/crudService";
 
 interface FormActionsProviderProps<T> {
   children: React.ReactNode;
@@ -40,7 +40,15 @@ export const useFormActionsContext = () => {
 };
 
 // Context Provider
-export const FormActionsProvider = ({ children, createActions, updateActions, deleteActions, fetchedAction, isPending, ListType }: Partial<FormActionsProviderProps<any>>) => {
+export const FormActionsProvider = ({
+  children,
+  createActions,
+  updateActions,
+  deleteActions,
+  fetchedAction,
+  isPending,
+  ListType,
+}: Partial<FormActionsProviderProps<any>>) => {
   const [defaultValues, setDefaultValues] = useState<any>({});
   const [currentId, setCurrentId] = useState<string | number | null>(null);
   const { resume_id } = useParams<{ resume_id: string }>();

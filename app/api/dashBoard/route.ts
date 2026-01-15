@@ -1,4 +1,5 @@
-import { Resume } from "@/app/dashBoard/_types/types";
+
+import { Resume } from "@/app/types/dashboard.type";
 import { createClient } from "@/lib/supaBase/Server";
 
 import { NextRequest, NextResponse } from "next/server";

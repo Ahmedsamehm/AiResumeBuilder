@@ -6,9 +6,9 @@ import { useForm } from "react-hook-form";
 
 import { useFormActionsContext } from "@/app/context/FormActionsContext";
 
-import StepNavigation from "@/app/resume/[resume_id]/_components/StepNavigation";
-import EditSection from "@/app/resume/[resume_id]/_components/EditSection";
-import { FormFieldT } from "@/app/resume/[resume_id]/_components/labelName";
+import StepNavigation from "@/app/(protected)/resume/[resume_id]/_components/StepNavigation";
+import EditSection from "@/app/(protected)/resume/[resume_id]/_components/EditSection";
+import { FormFieldT } from "@/app/types/Form.type";
 import FormField from "./FormField";
 
 type FormProps = {

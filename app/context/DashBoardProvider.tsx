@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { Resume } from "../dashBoard/_types/types";
+import { Resume } from "../types/dashboard.type";
 
 type DashBoardContextType = {
   resumes: Resume[];
@@ -23,10 +23,9 @@ export const DashBoardProvider = ({ children, initialResumes = [] }: { children?
   const [filteredResumes, setFilteredResumes] = useState<Resume[]>(initialResumes);
 
   useEffect(() => {
-    // Initialize resumes and filteredResumes with the initialResumes prop
     setResumes(initialResumes);
     setFilteredResumes(initialResumes);
-  }, [children]);
+  }, [initialResumes]);
 
   const value = { resumes, setResumes, filteredResumes, setFilteredResumes };
 

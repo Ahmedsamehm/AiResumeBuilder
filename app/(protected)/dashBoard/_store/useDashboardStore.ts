@@ -1,13 +1,13 @@
-import { Resume } from "@/app/types/dashboard.type";
 import { create } from "zustand";
+import { ResumeResponse } from "../Schema/dashBoardSchema";
 
 interface DashboardStore {
-  resumes: Resume[];
+  resumes: ResumeResponse[];
   searchQuery: string;
   setSearchQuery: (searchQuery: string) => void;
-  setResumes: (resumes: Resume[]) => void;
+  setResumes: (resumes: ResumeResponse[]) => void;
   // Add computed filtered resumes
-  filteredResumes: Resume[];
+  filteredResumes: ResumeResponse[];
 }
 
 export const useDashboardStore = create<DashboardStore>((set, get) => ({

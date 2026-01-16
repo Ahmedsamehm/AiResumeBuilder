@@ -13,27 +13,30 @@ import {
 } from "@/app/components/shared/ui/alert-dialog";
 import { Input } from "@/app/components/shared/ui/input";
 import { useForm, SubmitHandler } from "react-hook-form";
-import useCreateResume from "../_hooks/useCreateResume";
-import { Title } from "@/app/types/dashboard.type";
+import useDashboard from "../_hooks/useDashboard";
+
+import { PlusCircle } from "lucide-react";
+import { ResumeValues } from "../Schema/dashBoardSchema";
 
 const AddResume = () => {
-  const { AddResume, isPending: AddResumeLoading } = useCreateResume();
+  const { addResumeFn, isAddingResume } = useDashboard();
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<Title>();
+  } = useForm<ResumeValues>();
 
-  const onSubmit: SubmitHandler<Title> = ({ title }: Title) => {
-    AddResume({ title });
-
+  const onSubmit: SubmitHandler<ResumeValues> = ({ title }: ResumeValues) => {
+    addResumeFn({ title });
     reset();
   };
   return (
     <AlertDialog>
-      <AlertDialogTrigger className="size-52  mx-auto  md:size-full text-2xl ">+</AlertDialogTrigger>
+      <AlertDialogTrigger className=" min-h-[20dvh] w-full  mx-auto  md:size-full text-2xl border-1 hover:ease-in-out hover:scale-95 transition-all duration-300  hover:animate-fade-in hover:ring-1  ">
+        <PlusCircle className=" mx-auto" />
+      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Choose Name for Resume</AlertDialogTitle>
@@ -44,7 +47,7 @@ const AddResume = () => {
           </AlertDialogDescription>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction disabled={AddResumeLoading} type="submit">
+            <AlertDialogAction disabled={isAddingResume} type="submit">
               Create
             </AlertDialogAction>
           </AlertDialogFooter>

@@ -6,7 +6,7 @@ import Link from "next/link";
 import Search from "./Search";
 
 import ResumeList from "./ResumeList";
-import useResumes from "../_hooks/useGetData";
+import useDashboard from "../_hooks/useDashboard";
 
 import LoadingSpinner from "@/app/components/shared/ui/loadingSpinner";
 import { useDashboardStore } from "../_store/useDashboardStore";
@@ -14,7 +14,7 @@ import { Suspense, useEffect } from "react";
 
 const ResumeClient = () => {
   const setResumes = useDashboardStore((state) => state.setResumes);
-  const { Resumes, isPending, isError } = useResumes();
+  const { fetchedData: Resumes, isDataFetched: isPending, error: isError } = useDashboard();
   useEffect(() => {
     setResumes(Resumes ?? []);
   }, [Resumes, setResumes]);

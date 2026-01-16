@@ -1,9 +1,10 @@
-export type FormFieldT = {
+import { Path } from "react-hook-form";
+type InputType = "text" | "email" | "tel" | "textarea";
+export interface FormFieldConfig {
   name: string;
   label: string;
-  type: "text" | "textarea" | "tel" | "email";
+  type: InputType;
   placeholder: string;
-  options?: string[];
   required?: boolean;
   enableAi?: boolean;
-};
+}

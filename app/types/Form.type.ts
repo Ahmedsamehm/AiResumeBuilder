@@ -1,4 +1,4 @@
-import { Path } from "react-hook-form";
+
 type InputType = "text" | "email" | "tel" | "textarea";
 export interface FormFieldConfig {
   name: string;
@@ -7,4 +7,6 @@ export interface FormFieldConfig {
   placeholder: string;
   required?: boolean;
   enableAi?: boolean;
+  autoComplete?: string;
+  spellCheck?: boolean;
 }

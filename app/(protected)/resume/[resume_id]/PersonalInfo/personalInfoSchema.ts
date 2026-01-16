@@ -23,7 +23,7 @@ export const personalInfoUpdateSchema = personalInfoBaseSchema.partial().extend(
 export const personalInfoResponseSchema = personalInfoBaseSchema.extend({
   id: z.number(),
   resume_id: z.string().nullable(),
-  phone: z.number().nullable(), // Database stores phone as number
+  phone: z.string(), // Database stores phone as number
 });
 
 // Type exports

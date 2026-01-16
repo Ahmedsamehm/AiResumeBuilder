@@ -24,6 +24,6 @@ export const projectsResponseSchema = projectsBaseSchema.extend({
 });
 
 // Type exports
-export type ProjectValues = z.infer<typeof projectsBaseSchema>;
+export type ProjectsValues = z.infer<typeof projectsBaseSchema>;
 export type ProjectsUpdateInput = z.infer<typeof projectsUpdateSchema>;
 export type ProjectsResponse = z.infer<typeof projectsResponseSchema>;

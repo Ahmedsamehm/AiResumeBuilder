@@ -24,6 +24,6 @@ export const skillsResponseSchema = z.object({
 });
 
 // Type exports
-export type SkillValues = z.infer<typeof skillsBaseSchema>;
+export type SkillsValues = z.infer<typeof skillsBaseSchema>;
 export type SkillsUpdateInput = z.infer<typeof skillsUpdateSchema>;
 export type SkillsResponse = z.infer<typeof skillsResponseSchema>;

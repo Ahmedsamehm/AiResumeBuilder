@@ -33,9 +33,23 @@ export function ReusableForm({ form, inputs, onSubmit, isPending = false, classN
                   <FormLabel className="capitalize">{input.label}</FormLabel>
                   <FormControl>
                     {input.type === "textarea" ? (
-                      <Textarea placeholder={input.placeholder} {...field} value={field.value ?? ""} className="min-h-[100px]" />
+                      <Textarea
+                        placeholder={input.placeholder}
+                        {...field}
+                        value={field.value ?? ""}
+                        className="min-h-[100px]"
+                        autoComplete={input.autoComplete}
+                        spellCheck={input.spellCheck}
+                      />
                     ) : (
-                      <Input placeholder={input.placeholder} {...field} value={field.value ?? ""} type={input.type || "text"} />
+                      <Input
+                        placeholder={input.placeholder}
+                        {...field}
+                        value={field.value ?? ""}
+                        type={input.type || "text"}
+                        autoComplete={input.autoComplete}
+                        spellCheck={input.spellCheck}
+                      />
                     )}
                   </FormControl>
                   <FormMessage className="text-sm font-medium text-red-500" />
@@ -48,7 +62,7 @@ export function ReusableForm({ form, inputs, onSubmit, isPending = false, classN
         <Button type="submit" disabled={isPending} className="w-full md:w-auto">
           {isPending ? (
             <>
-              Submitting... <LoadingSpinner />
+              Submitting… <LoadingSpinner />
             </>
           ) : (
             buttonText

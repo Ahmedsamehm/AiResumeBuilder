@@ -2,6 +2,8 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { PersonalInfoValues } from "./personalInfoSchema";
 import { addPersonalInfo, fetchPersonalInfo, updatePersonalInfo } from "./personalInfoService";
+import { useResumeStore } from "../_store/useResumeStore";
+import { useEffect } from "react";
 
 export const usePersonalInfo = (resume_id: string) => {
   // Query
@@ -13,6 +15,13 @@ export const usePersonalInfo = (resume_id: string) => {
     queryKey: ["PersonalInformation", resume_id],
     queryFn: () => fetchPersonalInfo(resume_id),
   });
+
+  const setPersonalInfo = useResumeStore((s) => s.setPersonalInfo);
+  useEffect(() => {
+    if (fetchedData?.[0]) {
+      setPersonalInfo(fetchedData[0]);
+    }
+  }, [fetchedData, setPersonalInfo]);
 
   // Mutations
   const { mutate: addPersonalInfoFn, isPending: isAddingPersonalInfo } = useMutation({
